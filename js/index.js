@@ -187,17 +187,11 @@ function createButton (text, cb) {
 	button.addChild(label)
 	
 	//click animation
-	button.on('mousedown', function(){
-		label.style.fill = 'red'
-	})
-	.on('touchstart', function(){
+	button.on('pointerdown', function(){
 		label.style.fill = 'red'
 	})
 	
-	button.on('mouseup', function(){
-		label.style.fill = 'green'
-		cb()
-	}).on('touchend', function(){
+	button.on('pointerup', function(){
 		label.style.fill = 'green'
 		cb()
 	})
