@@ -190,7 +190,14 @@ function createButton (text, cb) {
 	button.on('mousedown', function(){
 		label.style.fill = 'red'
 	})
+	.on('touchstart', function(){
+		label.style.fill = 'red'
+	})
+	
 	button.on('mouseup', function(){
+		label.style.fill = 'green'
+		cb()
+	}).on('touchend', function(){
 		label.style.fill = 'green'
 		cb()
 	})
